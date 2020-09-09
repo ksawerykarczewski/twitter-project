@@ -26,7 +26,6 @@ catch(Exception $ex){
         <input name="tweetTitle" type="text" placeholder="Tweet Title" value="Title">
         <button type="submit">Tweet</button>
     </form>
-    
     <script src="app.js"></script>
 </body>
 </html>

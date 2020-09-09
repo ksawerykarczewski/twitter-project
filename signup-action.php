@@ -39,7 +39,7 @@ try{
     $jUser->name = $_POST['username'];
     $jUser->email = $_POST['email'];
     $jUser->password = $passwordHash;
-    $jUser->tweets = 'tweet';
+    $jUser->tweets = [];
 
      // Check for duplicated emails
      foreach( $aUsers as $aUser ){
