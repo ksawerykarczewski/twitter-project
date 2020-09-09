@@ -1,0 +1,1 @@
+[{"id":"5f58fc905ca39","name":"aaa","email":"a@a.com","password":"$2y$10$Z\/6RR67egpcL4G4fEBZrG.XK3G6l0D9IBP2zpEbvjhRWJDJ20an0i","tweets":"tweet"}]
