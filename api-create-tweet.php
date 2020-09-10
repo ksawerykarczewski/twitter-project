@@ -2,6 +2,7 @@
 
 try{
   session_start();
+  $sTweetId = uniqid();
 
   if( ! isset($_POST['tweetMessage']) ){
     http_response_code(400);
@@ -42,7 +43,7 @@ try{
 //   }
 
   $jTweet          = new stdClass(); // {}
-  $jTweet->id      = $_SESSION["userId"]; // user id and tweet id must match
+  $jTweet->id      = $sTweetId; // user id and tweet id must match
   $jTweet->message   = $_POST['tweetMessage'];
   //$jTweet->message = $_POST['tweetMessage'];
   // echo json_encode($jTweet);

@@ -19,3 +19,17 @@ async function postTweet() {
     //let jResponse = JSON.parse(sResponse) // convert text into JSON
     //console.log(jResponse.id)
 }
+
+// promises
+// async await
+// async function getName(){
+//   var connection = await fetch('api-get-name.php')
+//   var tweet = await connection.text()
+//   document.querySelector("#userName").innerText = tweet
+// }
+
+// setInterval(async function(){
+//   var connection = await fetch('api-get-name.php')
+//   var tweet = await connection.text();
+//   document.querySelector("#userName").insertAdjacentText('beforeend', tweet)
+// }, 1000)

@@ -19,7 +19,6 @@ foreach($aUsers as $aUser){
       exit();
     }else{
         echo 'no match';
-        exit();
     }
 }
 })();
