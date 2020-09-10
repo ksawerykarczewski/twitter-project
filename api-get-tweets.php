@@ -8,7 +8,6 @@
 
   foreach ($aTweets as &$aTweet) {
     if ($_SESSION["userId"] == $aTweet->id) {
-       
         //print_r($aTweet->tweets);
         print_r(json_encode($aTweet->tweets));
         break;

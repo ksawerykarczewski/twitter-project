@@ -69,7 +69,7 @@ try{
 };
 
   header('Content-Type: application/json');
-  //echo '{ "id":"'.$sTweetId.'"}';
+  echo '{ "id":"'.$sTweetId.'"}';
   //echo $sTweetId;
 }
 catch(Exception $ex){
