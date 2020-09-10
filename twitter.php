@@ -23,9 +23,11 @@ catch(Exception $ex){
         <button type="submit">Logout</button>
     </form>
     <form id="formTweet" onsubmit="postTweet(); return false">
-        <input name="tweetTitle" type="text" placeholder="Tweet Title" value="Title">
+        <input name="tweetMessage" type="text" placeholder="Tweet Message" value="Message">
         <button type="submit">Tweet</button>
     </form>
+    <div id="tweets">
+	</div>
     <script src="app.js"></script>
 </body>
 </html>
