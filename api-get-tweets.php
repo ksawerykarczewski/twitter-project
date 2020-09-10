@@ -1,26 +1,17 @@
-
 <?php
-    //header('HTTP/1.1 500 Internal Server Error');
-    exit("I error because");
-// echo "latestReceivedTweetId";
-//echo $_GET['latestReceivedTweetId'];
-$sTweets = file_get_contents('private/users.txt');
-$aTweets = json_decode($sTweets);
+  session_start();
 
-// Based on the array on top
-// Based on the latestReceivedTweetId
-// Send one tweet at a time NOt an array
-// setInterval
-// for loop
+  // open the db
+  $sTweets = file_get_contents('private/users.txt');
+  $aTweets = json_decode($sTweets);
+  header('Content-Type: application/json');
 
   foreach ($aTweets as &$aTweet) {
     if ($_SESSION["userId"] == $aTweet->id) {
-        // print_r($aTweet->tweets);
-        echo json_encode($aTweets);
+       
+        //print_r($aTweet->tweets);
+        print_r(json_encode($aTweet->tweets));
         break;
     }
 };
-
-// http_response_code(200);
-header('Content-Type: application/json');
-echo json_encode($aTweets);
+?>
