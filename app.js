@@ -22,13 +22,23 @@ setInterval(async function () {
     var connection = await fetch('api-get-tweets.php');
     var tweet = await connection.text();
     //console.log(JSON.parse(tweet));
+    // convert text to json
+    // let bridge = await fetch(`api-get-tweet.php?id=${inputId}`);
+    // let sResponse = await bridge.text();
+    // Convert text to JSON
+    let jTweet = JSON.parse(tweet);
+    // console.log(jTweet);
+    // console.log(jTweet[1]);
+    // document.querySelector("#tweets").innerHTML = divTweet;
 
-    for (let i = 0; i < JSON.parse(tweet).length; i++) {
-        const element = JSON.parse(tweet)[i]; //CHANGE STRING TO JSON
-        console.log(JSON.parse(tweet)[i].message);
+    for (let i = 0; i < jTweet.length; i++) {
+        console.log(jTweet[i].id);
+        var divTweet =
+            `<div class="tweet" data-id="${jTweet[i].id}">
+                <p>${jTweet[i].message}</p>
+            </div>`;
     }
-    //document.querySelector("#tweets").innerText = JSON.parse(tweet);
-    //document.querySelector("#tweets").innerHTML = JSON.parse(tweet)[i].message;
+    document.querySelector("#tweets").innerHTML = divTweet;
 }, 5000)
 
 
