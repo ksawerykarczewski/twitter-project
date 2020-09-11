@@ -24,28 +24,19 @@ setInterval(async function () {
     var tweet = await connection.text();
     // Convert text to JSON
     let jTweet = JSON.parse(tweet);
+    // clean the array
+    document.querySelector("#tweets").innerHTML = '';
 
     for (let i = 0; i < jTweet.length; i++) {
         console.log(jTweet[i].id);
+        console.log(jTweet[i].message);
         var divTweet =
             `<div class="tweet" data-id="${jTweet[i].id}">
                 <p>${jTweet[i].message}</p>
+                <button id="${jTweet[i].id}">Delete tweet</button>
             </div>`;
+
+        document.querySelector("#tweets").insertAdjacentHTML('afterbegin', divTweet);
     }
-    document.querySelector("#tweets").innerHTML = divTweet;
-}, 5000)
 
-
-// promises
-// async await
-// async function getName(){
-//   var connection = await fetch('api-get-name.php')
-//   var tweet = await connection.text()
-//   document.querySelector("#userName").innerText = tweet
-// }
-
-// setInterval(async function(){
-//   var connection = await fetch('api-get-name.php')
-//   var tweet = await connection.text();
-//   document.querySelector("#userName").insertAdjacentText('beforeend', tweet)
-// }, 1000)
+}, 3000);
